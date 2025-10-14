@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import React, { useEffect, useRef } from 'react';
 import '../assets/main.css'
 
 
@@ -7,7 +8,7 @@ export default function Nav() {
   const [active, setActive] = useState('Home');
   const [menuBtn, setMenuBtn] = useState('menu-btn');
   const [listOpen, setListOpen] = useState('list');
-  function toggleClassMenuBtn() {
+  function toggleClassMenuBtn(e) {
     setMenuBtn(prev =>
       prev === 'menu-btn' ? 'menu-btn cross' : 'menu-btn'
     );
@@ -15,14 +16,36 @@ export default function Nav() {
       prevList === 'list' ? 'list open' : 'list'
     );
   };
+  const menuRef = useRef(null);
+  const listRef = useRef(null);
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (
+        menuRef.current &&
+        listRef.current &&
+        !menuRef.current.contains(e.target) &&
+        !listRef.current.contains(e.target)
+      ) {
+        setMenuBtn("menu-btn");
+        setListOpen("list");
+      }
+    }
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
   const [isMobile, setIsMobile] = useState(
     window.matchMedia('(max-width: 750px)').matches
   );
-  const mediaQuery = window.matchMedia('(max-width: 750px)');
-  const handleChange = (e) => {
-    setIsMobile(e.matches);
-  };
-  mediaQuery.addEventListener('change', handleChange);
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 750px)');
+    const handleChange = (e) => {
+      setIsMobile(e.matches);
+    };
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  });
+
   return (
     <nav>
       <div className="main">
@@ -31,7 +54,7 @@ export default function Nav() {
             <a href="">Habib Iqbal.</a>
           </h1>
         </div>
-        <div className={listOpen}>
+        <div className={listOpen} ref={listRef}>
           <ul className={isMobile ? 'mobile' : ''}>
             {listItem.map((item) => (
               <li
@@ -44,7 +67,7 @@ export default function Nav() {
             ))}
           </ul>
         </div>
-        <div className={menuBtn} onClick={toggleClassMenuBtn}>
+        <div className={menuBtn} onClick={toggleClassMenuBtn} ref={menuRef}>
           <div className="menu-btn__burger"></div>
         </div>
       </div>

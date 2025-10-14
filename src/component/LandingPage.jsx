@@ -15,7 +15,7 @@ export default function LandingPage() {
     const styleTwo = { '--bg-color': 'hsl(40, 100%, 50%)' };
 
     const el = useRef(null);
-
+    
     useEffect(() => {
         const texts = [
             "Web Developer",
@@ -30,15 +30,12 @@ export default function LandingPage() {
 
         function type() {
             const current = texts[count];
-            if (isDeleting) {
-                index = Math.max(0, index - 1);
-            } else {
-                index = Math.min(current.length, index + 1);
-            }
 
-            if (el.current) {
-                el.current.textContent = current.substring(0, index);
-            }
+            isDeleting
+                ? index = Math.max(0, index - 1)
+                : index = Math.min(current.length, index + 1);
+
+            el.current && (el.current.textContent = current.substring(0, index));
 
             let delay = isDeleting ? 80 : 120;
 
@@ -50,10 +47,8 @@ export default function LandingPage() {
                 count = (count + 1) % texts.length;
                 delay = 500;
             }
-
             setTimeout(type, delay);
         }
-
         type();
     }, []);
 
