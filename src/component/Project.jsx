@@ -1,0 +1,36 @@
+import '../assets/main.css';
+import fotoProjectOne from '../assets/Screenshot (515).png';
+import fotoProjectTwo from '../assets/Screenshot (516).png';
+
+export default function Project() {
+
+    const project = [
+        {
+            foto: fotoProjectOne,
+            title: 'Tesya Lobster Farm',
+            deskription: 'Website ini dipergunakan sebagai salah satu media promosi bagi pemilih usah lobster air tawar dengan menampilkan setiap detail dari produk yang dijual, para pengunjung juga dapat memberikan review untuk setiap jenis lobster yang di jual. Website ini menggunakan bahasa pemrograman HTML, CSS, PHP, JavaScript, MySQL.'
+        },
+        {
+            foto: fotoProjectTwo,
+            title: 'Tesya Catalog',
+            deskription: 'Membuat aplikasi berbasis website menggunakan HTML, CSS, PHP, JavaScript, MySQL untuk menampilkan produk UMKM yang dijual masyarakat dengan menampilkan foto produk, harga, nomor hp dan informasi lainnya serta menerapkan UML diagram dalam pengembangan software berbasis website.'
+        },
+    ]
+
+    return (
+        <section className="projects" id="project">
+            <h4>My Projects</h4>
+            <div className="grid">
+                {project.map((item, i) => (
+                    <div className="card" key={i}>
+                        <img src={item.foto} alt="Project 1"></img>
+                        <div className="card-content">
+                            <h3>{item.title}</h3>
+                            <p>{item.deskription}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+    )
+}

@@ -51,9 +51,15 @@ export default function LandingPage() {
         }
         type();
     }, []);
+        const socialIcon = [
+        {link: 'https://web.facebook.com/habibiqballubis.lubis', icon: 'fa-brands fa-facebook-f'},
+        {link: 'https://x.com/habibiqbaaaal', icon: 'fa-brands fa-x-twitter'},
+        {link: 'https://www.instagram.com/habib.iqbal.l/', icon: 'fa-brands fa-instagram'},
+        {link: 'https://www.linkedin.com/in/mhd-habib-iqbal-lubis/', icon: 'fa-brands fa-linkedin-in'}
+    ]
 
     return (
-        <section className='hero' id=''>
+        <section className='hero' id='home'>
             <div className="container">
                 <div className="hero-content">
                     <h3>Hello, It's Me</h3>
@@ -66,10 +72,13 @@ export default function LandingPage() {
                         cukup baik pada pengembangan website dan UI/UX
                     </p>
                     <div className="social-icons">
-                        <a href="https://web.facebook.com/habibiqballubis.lubis" target='_blank'><i><FontAwesomeIcon icon="fa-brands fa-facebook-f" /></i></a>
-                        <a href="https://x.com/habibiqbaaaal" target='_blank'><i><FontAwesomeIcon icon="fa-brands fa-x-twitter" /></i></a>
-                        <a href="https://www.instagram.com/habib.iqbal.l/" target='_blank'><i><FontAwesomeIcon icon="fa-brands fa-instagram" /></i></a>
-                        <a href="https://www.linkedin.com/in/mhd-habib-iqbal-lubis/" target='_blank'><i><FontAwesomeIcon icon="fa-brands fa-linkedin-in" target='_blank' /></i></a>
+                        {socialIcon.map((item, i) => (
+                            <a href={item.link} target='_blank' key={i}>
+                                <i>
+                                    <FontAwesomeIcon icon={item.icon} />
+                                </i>
+                            </a>
+                        ))}
                     </div>
                 </div>
                 <div className="hero-image">
