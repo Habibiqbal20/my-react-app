@@ -20,40 +20,40 @@ export default function Project() {
     ]
 
     useEffect(() => {
-          gsap.utils.toArray(".card").forEach((card, i) => {
-    gsap.fromTo(card,
-      {
-        x: i % 2 === 0 ? -300 : 300,
-        opacity: 0
-      },
-      {
-        x: 0,
-        opacity: 1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 80%",
-          end: "top 35%",
-          scrub: true,
-          //markers: true,
-        }
-      }
-    );
-    card.addEventListener("mouseenter", () => {
-      gsap.to(card, {
-        y: -10,
-        duration: 0.2,
-        ease: "power2.out"
-      });
-    });
-    card.addEventListener("mouseleave", () => {
-      gsap.to(card, {
-        y: 1,
-        duration: 0.2,
-        ease: "power2.inOut"
-      });
-    });
-  });
+        gsap.utils.toArray(".card").forEach((card, i) => {
+            gsap.fromTo(card,
+                {
+                    x: i % 2 === 0 ? -300 : 300,
+                    opacity: 0
+                },
+                {
+                    x: 0,
+                    opacity: 1,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 80%",
+                        end: "top 35%",
+                        scrub: true,
+                        //markers: true,
+                    }
+                }
+            );
+            card.addEventListener("mouseenter", () => {
+                gsap.to(card, {
+                    y: -10,
+                    duration: 0.2,
+                    ease: "power2.out"
+                });
+            });
+            card.addEventListener("mouseleave", () => {
+                gsap.to(card, {
+                    y: 1,
+                    duration: 0.2,
+                    ease: "power2.inOut"
+                });
+            });
+        });
     })
 
     return (
