@@ -322,12 +322,23 @@ nav .main .menu-btn {
   flex: 1 1 30%;
   background: hsla(0, 0%, 0%, 0.82);
   display: flex;
+  flex-direction: column;
   padding: 0.3rem;
   align-items: center;
   padding-top: 15%;
 }
+.hero .container .hero-image .profile-card .card__inner .card__img .img__team .ovr {
+  margin-top: 20px;
+  color: rgb(184, 184, 26);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+}
+.hero .container .hero-image .profile-card .card__inner .card__img .img__team .position {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
 .hero .container .hero-image .profile-card .card__inner .card__img .img__team img {
-  width: 100%;
+  width: 80%;
   vertical-align: middle;
 }
 .hero .container .hero-image .profile-card .card__inner .card__img .img__athlete {
@@ -345,6 +356,18 @@ nav .main .menu-btn {
   padding-bottom: 16%;
   transform: translate3d(0, 0, 50px);
   text-align: center;
+}
+.hero .container .hero-image .profile-card .card__inner .card__text .value {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.hero .container .hero-image .profile-card .card__inner .card__text .value .left {
+  width: 40%;
+  border-right: 1px solid black;
+}
+.hero .container .hero-image .profile-card .card__inner .card__text .value .right {
+  width: 40%;
 }
 .hero .container .hero-image .profile-card .card__inner .card__text:before {
   content: "";
@@ -416,7 +439,6 @@ nav .main .menu-btn {
 }
 .hero .container .hero-image img {
   width: 100%;
-  border-radius: 20px;
 }
 
 @media (max-width: 800px) {

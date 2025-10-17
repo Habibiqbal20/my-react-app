@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useLayoutEffect } from 'react';
+import gsap from '../assets/gsapSetup';
 import '../assets/main.css'
 
 
@@ -46,8 +47,18 @@ export default function Nav() {
     return () => mediaQuery.removeEventListener('change', handleChange);
   });
 
+useEffect(() => {
+  const nav = gsap.context(() => {
+    gsap.from(".nav", { 
+      y: -100, 
+      opacity: 0, 
+      duration: 1 });
+  });
+  return () => nav.revert();
+}, []);
+
   return (
-    <nav>
+    <nav className='nav'>
       <div className="main">
         <div className="logo">
           <h1>

@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { useEffect, useRef } from "react";
 import profilePicture from '../assets/17583517131s70s.jpg';
+import { gsap } from "gsap";
+import { SplitText } from "gsap/all";
+
 import '../assets/main.css';
 
 export default function About() {
@@ -129,13 +132,73 @@ export default function About() {
             items: ["Premiere Pro", "After Effects", "Photoshop", "Canva"],
         },
     ];
+
+
+    const titleAbout = useRef(null);
+    const splitText = useRef(null);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.from(titleAbout.current, {
+                y: -50,
+                opacity: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: titleAbout.current,
+                    start: 'top 80%',
+                    //markers: true,
+                    once: true,
+                },
+            });
+
+            console.log("✅ SplitText loaded?", typeof SplitText);
+
+            document.fonts.ready.then(() => {
+                gsap.set(splitText.current, { opacity: 1 });
+
+                const paragraph = splitText.current.querySelector("p");
+                if (paragraph.splitText) {
+                    paragraph.splitText.revert();
+                }
+                const split = new SplitText(paragraph, {
+                    type: "words,lines",
+                    linesClass: "line",
+                    autoSplit: true,
+                    mask: "lines",
+                });
+                paragraph.splitText = split;
+                gsap.from(split.lines, {
+                    scrollTrigger: {
+                        trigger: splitText.current,
+                        start: "top 80%",
+                        toggleActions: "play pause resume none",
+                        // markers: true,
+                    },
+                    duration: 1,
+                    yPercent: 100,
+                    opacity: 0,
+                    stagger: 0.4,
+                    ease: "expo.out",
+                });
+            });
+        });
+        return () => {
+            ctx.revert();
+            const paragraph = splitText.current?.querySelector("p");
+            if (paragraph?.splitText) {
+                paragraph.splitText.revert();
+                delete paragraph.splitText;
+            }
+        };
+    }, []);
+
     return (
         <section className="about" id="about">
             <div className="about-content">
                 <div className="header">
-                    <h1 className="About-me">About Me</h1>
+                    <h1 className="About-me" ref={titleAbout}>About Me</h1>
                 </div>
-                <div className="text split">
+                <div className="text split" ref={splitText}>
                     <p>Memiliki minat bekerja pada bidang yang berhubungan dengan Komputer
                         maupun pada bagian administrasi perkantoran dan lainnya. Senang
                         untuk mempelajari hal-hal yang baru serta memiliki kemampuan yang

@@ -414,12 +414,23 @@ nav {
                             flex: 1 1 30%;
                             background: hsla(0, 0%, 0%, 0.82);
                             display: flex;
+                            flex-direction: column;
                             padding: 0.3rem;
                             align-items: center;
                             padding-top: 15%;
+                            .ovr {
+                                margin-top: 20px;
+                                color: rgb(184, 184, 26);
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 1.3rem;
+                            }
+                            .position {
+                                margin-bottom: 10px;
+                                font-size: 1.1rem;
+                            }
 
                             img {
-                                width: 100%;
+                                width: 80%;
                                 vertical-align: middle;
                             }
                         }
@@ -443,6 +454,18 @@ nav {
                         padding-bottom: 16%;
                         transform: translate3d(0, 0, 50px);
                         text-align: center;
+                        .value {
+                            display: flex;
+                            justify-content: center;
+                            margin-bottom: 20px;
+                            .left {
+                                width: 40%;
+                                border-right: 1px solid black;
+                            }
+                            .right {
+                                width: 40%;
+                            }
+                        }
 
                         &:before {
                             content: '';
@@ -533,7 +556,7 @@ nav {
 
             img {
                 width: 100%;
-                border-radius: 20px;
+                // border-radius: 20px;
                 //box-shadow: 0 0 30px rgba($primary-color, 0.5);
             }
         }
@@ -729,9 +752,9 @@ nav {
                     }
                 }
 
-                .contrib-column {
-                    //display: none;
-                }
+                // .contrib-column {
+                //     display: none;
+                // }
 
                 .contrib-number {
                     color: $primary-color;
