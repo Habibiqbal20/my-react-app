@@ -217,7 +217,7 @@ export default function LandingPage() {
                                         <h1>99</h1>
                                     </div>
                                     <div className="position">
-                                        <h3>ST</h3>
+                                        <p>ST</p>
                                     </div>
                                     <img src={nationalFlag} alt=""></img>
                                 </div>
@@ -230,14 +230,14 @@ export default function LandingPage() {
                                 <h1 className="name">Habib</h1>
                                 <div className="value">
                                     <div className="left">
-                                        <h3><strong>99</strong> PAC</h3>
-                                        <h3><strong>99</strong> SHO</h3>
-                                        <h3><strong>99</strong> PAS</h3>
+                                        <p><strong>99</strong> PAC</p>
+                                        <p><strong>99</strong> SHO</p>
+                                        <p><strong>97</strong> PAS</p>
                                     </div>
                                     <div className="right">
-                                        <h3><strong>99</strong> DRI</h3>
-                                        <h3><strong>99</strong> DEF</h3>
-                                        <h3><strong>99</strong> PHY</h3>
+                                        <p><strong>98</strong> DRI</p>
+                                        <p><strong>88</strong> DEF</p>
+                                        <p><strong>95</strong> PHY</p>
                                     </div>
                                 </div>
                                 {/* <p className="points">380 PTS</p> */}

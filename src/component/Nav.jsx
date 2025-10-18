@@ -47,15 +47,67 @@ export default function Nav() {
     return () => mediaQuery.removeEventListener('change', handleChange);
   });
 
-useEffect(() => {
-  const nav = gsap.context(() => {
-    gsap.from(".nav", { 
-      y: -100, 
-      opacity: 0, 
-      duration: 1 });
-  });
-  return () => nav.revert();
-}, []);
+  useEffect(() => {
+    const nav = gsap.context(() => {
+      gsap.from(".nav", {
+        y: -100,
+        opacity: 0,
+        duration: 1
+      });
+
+      function handleMouseEnter(e) {
+        gsap.to(e.currentTarget, {
+          x: 20,
+          duration: 0.2,
+          ease: 'power4.in'
+        });
+      }
+      function handleMouseLeave(e) {
+        gsap.to(e.currentTarget, {
+          x: 0,
+          duration: 0.2,
+          ease: 'power4.in'
+        });
+      }
+      setInterval(() => {
+        const exists = document.querySelector('.open');
+        const li = document.querySelectorAll('.li');
+        const isMobile = window.innerWidth <= 900;
+
+        if (!isMobile) {
+          li.forEach(liAnimate => {
+            liAnimate.removeEventListener('mouseenter', handleMouseEnter);
+            liAnimate.removeEventListener('mouseleave', handleMouseLeave);
+            gsap.set(liAnimate, { clearProps: 'all' });
+          });
+          return;
+        }
+
+        if (!exists) {
+          gsap.utils.toArray(li).forEach((liAnimate, iAnimate) => {
+            gsap.fromTo(
+              liAnimate,
+              {
+                opacity: 0,
+                x: 20
+              },
+              {
+                opacity: 1,
+                x: 0,
+                duration: 1,
+                delay: iAnimate * 0.3,
+                ease: "power4.in"
+              }
+            );
+
+            liAnimate.addEventListener('mouseenter', handleMouseEnter);
+            liAnimate.addEventListener('mouseleave', handleMouseLeave);
+          });
+        }
+      }, 500);
+    });
+    return () => nav.revert();
+  }, []);
 
   return (
     <nav className='nav'>
@@ -70,7 +122,7 @@ useEffect(() => {
             {listItem.map((item) => (
               <li
                 key={item}
-                className={active === item ? 'active' : ''}
+                className={active === item ? 'active li' : 'li'}
                 onClick={() => setActive((item))}
               >
                 <a onClick={() => (window.location.href = '#' + item.toLowerCase())}>{item}</a>

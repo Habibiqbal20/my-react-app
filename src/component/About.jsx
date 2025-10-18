@@ -181,6 +181,27 @@ export default function About() {
                     ease: "expo.out",
                 });
             });
+
+            gsap.from('.github-profile', {
+                scrollTrigger: {
+                    trigger: '.github-profile',
+                    start: 'top 80%',
+                },
+                x: -200,
+                opacity: 0,
+                duration: 1.3,
+
+            });
+            gsap.from('.calendar', {
+                scrollTrigger: {
+                    trigger: '.calendar',
+                    start: 'top 80%',
+                },
+                x: 200,
+                opacity: 0,
+                duration: 1.3,
+                delay: 0.8
+            });
         });
         return () => {
             ctx.revert();

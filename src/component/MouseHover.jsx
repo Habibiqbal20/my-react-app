@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+// const baseColor = "#1d1d1dff";
 const baseColor = "#1e1e2f";
 
 export default function MouseHover() {
