@@ -213,6 +213,56 @@ export default function About() {
         };
     }, []);
 
+    const skills = [
+        { name: "Web Developer", level: 78 },
+        { name: "Microsoft Office", level: 90 },
+        { name: "Digital Marketing", level: 70 },
+        { name: "Photo/Video Editor", level: 85 },
+    ];
+
+    const sectionRef = useRef(null);
+    const barsRef = useRef([]);
+    const numbersRef = useRef([]);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            barsRef.current.forEach((bar, index) => {
+                const numObj = { value: 0 };
+
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: "top 80%",
+                        toggleActions: "play none none none",
+                    },
+                });
+
+                tl.fromTo(
+                    bar,
+                    { width: "0%" },
+                    {
+                        width: `${skills[index].level}%`,
+                        duration: 1.8,
+                        ease: "power3.out",
+                        delay: index * 0.2,
+                    }
+                ).to(numObj, {
+                    value: skills[index].level,
+                    duration: 1.8,
+                    delay: index * 0.2,
+                    ease: "power3.out",
+                    onUpdate: () => {
+                        if (numbersRef.current[index]) {
+                            numbersRef.current[index].textContent = `${Math.round(numObj.value)}%`;
+                        }
+                    },
+                }, "<");
+            });
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, [skills]);
+
     return (
         <section className="about" id="about">
             <div className="about-content">
@@ -278,6 +328,22 @@ export default function About() {
                             </div>
                         ))}
                     </div>
+                </div>
+            </div>
+            <div className="skills-section" ref={sectionRef}>
+                <h2 className="skills-title">My Skills</h2>
+                <div className="skills-container">
+                    {skills.map((skill, index) => (
+                        <div className="skill" key={skill.name}>
+                            <div className="skill-info">
+                                <span className="skill-name">{skill.name}</span>
+                                <span className="skill-number" ref={(el) => (numbersRef.current[index] = el)}>0% </span>
+                            </div>
+                            <div className="skill-bar">
+                                <div className="skill-fill" ref={(el) => (barsRef.current[index] = el)}></div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

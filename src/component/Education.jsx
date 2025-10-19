@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from '../assets/gsapSetup';
+import SMA from '../assets/SMA.JPG';
 import '../assets/main.css';
 
 export default function Education() {
@@ -8,22 +9,26 @@ export default function Education() {
         {
             title: 'STIE BINA KARYA',
             listItem: ['Address : Tebing Tinggi', 'Year : 2021 - 2025', 'Average Value : 3.7'],
-            link: 'https://maps.app.goo.gl/UEHebYC8fWGBJacs8'
+            link: 'https://maps.app.goo.gl/UEHebYC8fWGBJacs8',
+            img: SMA
         },
         {
             title: 'SMA NEGERI 1 DOLOK BATU NANGGAR',
             listItem: ['Address : Serbelawan', 'Year : 2018 - 2021', 'Average Value : 8.5'],
-            link: 'https://maps.app.goo.gl/ZLrjBMjs7AG5Zs6U7'
+            link: 'https://maps.app.goo.gl/ZLrjBMjs7AG5Zs6U7',
+            img: SMA
         },
         {
             title: 'SMP NEGERI 1 DOLOK BATU NANGGAR',
             listItem: ['Address : Serbelawan', 'Year : 2015 - 2018', 'Average Value : 3.7'],
-            link: 'https://maps.app.goo.gl/YYPVnFmUVe9CeazQ7'
+            link: 'https://maps.app.goo.gl/YYPVnFmUVe9CeazQ7',
+            img: SMA
         },
         {
             title: 'SD NEGERI 091600',
             listItem: ['Address : Dolok Merangir', 'Year : 2009 - 2015', 'Average Value : 80'],
-            link: 'https://maps.app.goo.gl/K4dx1wpnnguy9ohq5'
+            link: 'https://maps.app.goo.gl/K4dx1wpnnguy9ohq5',
+            img: SMA
         },
     ]
 
@@ -37,12 +42,12 @@ export default function Education() {
                 {
                     x: 0,
                     opacity: 1,
-                    ease: "none",
+                    //ease: "expo.out",
+                    //duration: 0.5,
                     scrollTrigger: {
                         trigger: myEdu,
-                        start: "top 90%",
-                        end: "top 70%",
-                        scrub: true,
+                        start: "top 75%",
+                        //scrub: true,
                         //markers: true,
                     }
                 }
@@ -64,6 +69,13 @@ export default function Education() {
         });
     })
 
+    const [activeIndex, setActiveIndex] = useState(null);
+    const fotoRef = useRef([]);
+    const handleToggle = (index) => {
+        setActiveIndex((prev) => (
+            prev === index ? null : index));
+    };
+    
     return (
         <>
             <div className="timeline-heading">
@@ -75,12 +87,19 @@ export default function Education() {
                         <div className="timeline-item" key={i}>
                             <div className="timeline-img"></div>
                             <div className="timeline-content js--fadeInLeft">
-                                <a href={edu.link} target='_blank'>
+                                <a href={edu.link} target="_blank" rel="noopener noreferrer">
                                     <h2>{edu.title}</h2>
                                 </a>
                                 {edu.listItem.map((item, j) => (
                                     <p key={j}>{item}</p>
+                                    
                                 ))}
+                                <img
+                                    src={edu.img}
+                                    //className='edu'
+                                    // className={activeIndex === i ? "edu" : ""}
+                                    ref={(el) => (fotoRef.current[i] = el)}
+                                />
                             </div>
                         </div>
                     ))}

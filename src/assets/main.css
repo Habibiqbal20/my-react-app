@@ -692,6 +692,48 @@ nav .main .menu-btn {
 .about .skills .skills-content-container .skills-content .skills-card .information ul li:hover {
   color: #FFFFFF;
 }
+.about .skills-section {
+  padding: 60px 20px 0 20px;
+}
+.about .skills-section .skills-title {
+  font-size: 2rem;
+  color: #FF4081;
+  margin-bottom: 40px;
+  color: #00e0ff;
+}
+.about .skills-section .skills-container {
+  margin: 0 auto;
+}
+.about .skills-section .skills-container .skill {
+  margin-bottom: 25px;
+}
+.about .skills-section .skills-container .skill .skill-info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.about .skills-section .skills-container .skill .skill-info .skill-name {
+  color: white;
+}
+.about .skills-section .skills-container .skill .skill-info .skill-number {
+  color: #00e0ff;
+  text-shadow: 0 0 8px #00e0ff;
+}
+.about .skills-section .skills-container .skill .skill-bar {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  height: 12px;
+  position: relative;
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2);
+}
+.about .skills-section .skills-container .skill .skill-bar .skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00e5ff, rgb(25.5, 231.6, 255));
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+  border-radius: 10px 0 0 10px;
+  transition: width 0.3s ease-out;
+}
 
 .timeline-heading {
   margin-bottom: 50px;
@@ -738,10 +780,11 @@ nav .main .menu-btn {
   position: relative;
   width: 45%;
   padding: 10px 30px;
-  border-radius: 4px;
+  border-radius: 6px;
   background: #f5f5f5;
   box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
-  transition: ease 0.3s;
+  overflow: hidden;
+  transition: ease 0.7s;
 }
 .timeline .timeline-item .timeline-content a {
   color: black;
@@ -772,6 +815,14 @@ nav .main .menu-btn {
   right: -15px;
   border-width: 10px 0 10px 15px;
   border-color: transparent transparent transparent #f5f5f5;
+}
+.timeline .timeline-item .timeline-content img {
+  margin-top: 15px;
+  width: 100%;
+  display: none;
+}
+.timeline .timeline-item .timeline-content .edu {
+  display: flex;
 }
 .timeline .timeline-item:nth-child(even) .timeline-content {
   float: right;
