@@ -10,14 +10,14 @@ import Contact from '../src/component/Contact.jsx'
 import Footer from '../src/component/Footer.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <MouseHover/>
-    <Nav />
-    <LandingPage />
-    <About />
-    <Education />
-    <Project />
-    <Contact />
-    <Footer />
-  </StrictMode>,
+    <StrictMode>
+        <MouseHover />
+        <Nav />
+        <LandingPage />
+        <About />
+        <Education />
+        <Project />
+        <Contact />
+        <Footer />
+    </StrictMode>,
 )
