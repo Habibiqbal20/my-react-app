@@ -1,5 +1,6 @@
 {
     "name": "my-app",
+    "homepage": "https://habibiqbal20.github.io/habibiqbal.github.io/",
     "private": true,
     "version": "0.0.0",
     "type": "module",
@@ -7,7 +8,9 @@
         "dev": "vite",
         "build": "vite build",
         "lint": "eslint .",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^7.1.0",
@@ -15,9 +18,12 @@
         "@fortawesome/free-regular-svg-icons": "^7.1.0",
         "@fortawesome/free-solid-svg-icons": "^7.1.0",
         "@fortawesome/react-fontawesome": "^3.1.0",
+        "gh-pages": "^6.3.0",
+        "github-calendar": "^2.3.4",
         "gsap": "^3.13.0",
         "react": "^19.1.1",
         "react-dom": "^19.1.1",
+        "react-github-calendar": "^4.5.11",
         "vanilla-tilt": "^1.8.1"
     },
     "devDependencies": {

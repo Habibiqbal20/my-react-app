@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import profilePicture from '../assets/17583517131s70s.jpg';
 import { gsap } from "gsap";
 import { SplitText } from "gsap/all";
+//import GitHubCalendar from 'react-github-calendar';
 
 import '../assets/main.css';
 
@@ -16,7 +17,9 @@ export default function About() {
 
         const script = document.createElement("script");
         script.src =
-            "https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js";
+            "https://bloggify.github.io/github-calendar/dist/github-calendar.min.js";
+        // script.src =
+        //     "https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js";
         script.onload = () => {
             if (window.GitHubCalendar) {
                 window.GitHubCalendar(".calendar", "Habibiqbal20", {
@@ -302,6 +305,7 @@ export default function About() {
                     </div>
                     <div className="calendar">
                         <span className="loading-text">Loading contributions...</span>
+                        {/* <GitHubCalendar username="Habibiqbal20" /> */}
                     </div>
                 </div>
             </div>
