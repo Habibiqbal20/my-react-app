@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')).render(
         <Nav />
         <LandingPage />
         <About />
-        <Education />
+        <Education /> 
         <Project />
         <Contact />
         <Footer />
