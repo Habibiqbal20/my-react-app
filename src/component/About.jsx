@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useEffect, useRef } from "react";
-import profilePicture from '../assets/17583517131s70s.jpg';
+import profilePicture from '../assets/my_foto/17583517131s70s.jpg';
 import { gsap } from "gsap";
 import { SplitText } from "gsap/all";
 //import GitHubCalendar from 'react-github-calendar';

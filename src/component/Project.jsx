@@ -1,7 +1,7 @@
 import '../assets/main.css';
 import gsap from '../assets/gsapSetup';
-import fotoProjectOne from '../assets/Screenshot (515).png';
-import fotoProjectTwo from '../assets/Screenshot (516).png';
+import fotoProjectOne from '../assets/project/Screenshot (515).png';
+import fotoProjectTwo from '../assets/project/Screenshot (516).png';
 import { useEffect } from 'react';
 
 export default function Project() {

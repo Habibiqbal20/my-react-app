@@ -6,6 +6,7 @@ import About from '../src/component/About.jsx'
 import MouseHover from '../src/component/MouseHover.jsx'
 import Education from '../src/component/Education.jsx'
 import Project from '../src/component/Project.jsx'
+import Powered from '../src/component/Powered.jsx'
 import Contact from '../src/component/Contact.jsx'
 import Footer from '../src/component/Footer.jsx'
 
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')).render(
         <About />
         <Education /> 
         <Project />
+        <Powered />
         <Contact />
         <Footer />
     </StrictMode>,

@@ -1252,119 +1252,50 @@ nav {
 // CARD PROJECT SELESAI
 
 
-.container-tribute {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    min-height: 100vh;
-    padding: 2em;
 
-    .inner-container {
-        max-width: 1200px;
-        width: 100%;
 
-        .title-tribute {
-            text-align: center;
-            margin-bottom: 2em;
+.powered {
+    margin-top: 100px;
+    padding: 0 40px;
+    margin-bottom: 50px;
 
+    @media (min-width: 1300px) {
+        & {
+            max-width: 1300px;
+            align-items: center;
+            justify-self: anchor-center;
+            width: -webkit-fill-available;
+        }
+    }
+
+    .inner-powered {
+        .title {
+            margin-bottom: 50px;
             h4 {
                 font-size: 2rem;
+                margin-bottom: 40px;
                 color: $primary-color;
-                text-align: left;
-                letter-spacing: 1px;
             }
         }
-
-        .content-tribute {
+        .content-powered {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5em;
-            justify-content: center;
-            align-items: stretch;
-
-            .card-tribute {
-                position: relative;
-                overflow: hidden;
-                border-radius: 12px;
-                background: #111;
-                transform: translateY(40px);
-                opacity: 0;
-                animation: fadeInUp 0.8s ease forwards;
-
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            .card-lang {
+                width: 100px;
+                align-content: center;
+                justify-self: center;
+                margin-bottom: 50px;
                 img {
                     width: 100%;
-                    height: 320px;
-                    filter: grayscale(1);
-                    object-fit: cover;
-                    border-bottom: 3px solid $primary-color;
-                    transition: transform 0.5s ease;
-                }
-
-                .information {
-                    background: rgba(0, 0, 0, 0.7);
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    padding: 1em;
-                    text-align: center;
-                    transform: translateY(100%);
-                    opacity: 0;
                     transition: all 0.5s ease;
-                }
-
-                &:hover {
-                    img {
-                        transform: scale(1.1);
-                    }
-
-                    .information {
-                        transform: translateY(0);
-                        opacity: 1;
-                    }
-                }
-
-                .information {
-                    h3 {
-                        margin: 0.3em 0;
-                        font-size: 1.2em;
-                        color: $primary-color;
-                    }
-
-                    p {
-                        margin: 0.2em 0;
-                        font-size: 0.95em;
-                        color: #ddd;
+                    &:hover {
+                        scale: 1.1;
                     }
                 }
             }
-        }
-    }
-    @keyframes fadeInUp {
-        0% {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @media (max-width: 600px) {
-        .title-tribute h1 {
-            font-size: 1.8em;
-        }
-
-        .content-tribute .card-tribute img {
-            height: 250px;
         }
     }
 }
-
-
 
 
 
