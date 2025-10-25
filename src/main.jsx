@@ -9,6 +9,7 @@ import Project from '../src/component/Project.jsx'
 import Powered from '../src/component/Powered.jsx'
 import Contact from '../src/component/Contact.jsx'
 import Footer from '../src/component/Footer.jsx'
+import Tribute from './component/Tribute.jsx'
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
         <Education /> 
         <Project />
         <Powered />
+        <Tribute />
         <Contact />
         <Footer />
     </StrictMode>,

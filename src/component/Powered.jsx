@@ -4,7 +4,7 @@ import JS from '../assets/logo/javascript.png'
 import reactLogo from '../assets/logo/react_native_icon.png'
 import Sass from '../assets/logo/sass_icon.png'
 import Gsap from '../assets/logo/gsap-white.svg'
-import Vite from '../../public/vite.svg'
+import Vite from '../assets/logo/vite.svg'
 
 export default function Powered() {
 

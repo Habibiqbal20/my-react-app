@@ -110,7 +110,7 @@ export default function Nav() {
     }, []);
 
     return (
-        <nav className='nav'>
+        <div className='nav'>
             <div className="main">
                 <div className="logo">
                     <h1>
@@ -134,7 +134,7 @@ export default function Nav() {
                     <div className="menu-btn__burger"></div>
                 </div>
             </div>
-        </nav>
+        </div>
 
     )
 }

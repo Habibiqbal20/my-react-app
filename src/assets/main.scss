@@ -51,7 +51,7 @@ html {
     transition: background 0.1s ease;
 }
 
-nav {
+.nav {
     padding: 15px 0 15px 0;
     background-color: $bg-color;
     // box-shadow: -11px -12px 19px 5px;
@@ -1252,8 +1252,6 @@ nav {
 // CARD PROJECT SELESAI
 
 
-
-
 .powered {
     margin-top: 100px;
     padding: 0 40px;
@@ -1271,26 +1269,39 @@ nav {
     .inner-powered {
         .title {
             margin-bottom: 50px;
+
             h4 {
                 font-size: 2rem;
                 margin-bottom: 40px;
                 color: $primary-color;
             }
         }
+
         .content-powered {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+
             .card-lang {
-                width: 100px;
+                width: 210px;
+                height: 130px;
                 align-content: center;
                 justify-self: center;
                 margin-bottom: 50px;
+                padding: 10px 60px;
+                border-radius: 10px;
+                background-color: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+
+                &:hover {
+                    img {
+                        scale: 1.2;
+                    }
+                }
+
                 img {
                     width: 100%;
                     transition: all 0.5s ease;
-                    &:hover {
-                        scale: 1.1;
-                    }
                 }
             }
         }
@@ -1298,6 +1309,83 @@ nav {
 }
 
 
+.container-tribute {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding: 0 40px;
+
+    .inner-container {
+        max-width: 1200px;
+        width: 100%;
+
+        .title-tribute {
+            text-align: left;
+            margin-bottom: 2em;
+
+            h4 {
+                font-size: 2rem;
+                color: $primary-color;
+            }
+        }
+
+        .content-tribute {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5em;
+            justify-content: center;
+
+            .card-tribute {
+                position: relative;
+                overflow: hidden;
+                border-radius: 12px;
+
+                img {
+                    width: 100%;
+                    height: 320px;
+                    object-fit: cover;
+                    border-bottom: 3px solid $primary-color;
+                    transition: transform 0.5s ease;
+                }
+
+                .information {
+                    background: rgba(0, 0, 0, 0.7);
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    padding: 1em;
+                    text-align: center;
+                    transform: translateY(100%);
+                    transition: all 0.5s ease;
+
+                    h3 {
+                        color: $primary-color;
+                        margin: 0.3em 0;
+                        font-size: 1.2em;
+                    }
+
+                    p {
+                        color: white;
+                        margin: 0.2em 0;
+                        font-size: 0.95em;
+                    }
+                }
+
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                    }
+
+                    .information {
+                        transform: translateY(0);
+                    }
+                }
+            }
+        }
+    }
+}
 
 .contact {
     padding: 0 10%;
