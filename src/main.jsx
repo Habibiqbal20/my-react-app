@@ -20,7 +20,7 @@ createRoot(document.getElementById('root')).render(
         <Education /> 
         <Project />
         <Powered />
-        <Tribute />
+        {/* <Tribute /> */}
         <Contact />
         <Footer />
     </StrictMode>,

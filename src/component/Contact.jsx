@@ -6,7 +6,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 library.add(fas, far, fab)
-import CV from '../assets/New_CV.pdf';
+import CV from '../assets/New_CV_ATS.pdf';
+import manualPDF from "../assets/Skripsi.pdf";
 
 export default function Contact() {
     const scriptURL =
@@ -106,7 +107,7 @@ export default function Contact() {
                 </form>
                 <div className="download-cv">
                     <button className="btn download-btn" id="downloadBtn" onClick={download}>
-                        Download CV
+                        Download My CV
                     </button>
                 </div>
             </div>
