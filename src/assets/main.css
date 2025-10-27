@@ -1023,7 +1023,7 @@ html {
 }
 .container-tribute .inner-container .content-tribute {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5em;
   justify-content: center;
 }
@@ -1034,7 +1034,7 @@ html {
 }
 .container-tribute .inner-container .content-tribute .card-tribute img {
   width: 100%;
-  height: 320px;
+  height: 200px;
   object-fit: cover;
   border-bottom: 3px solid #00e0ff;
   transition: transform 0.5s ease;

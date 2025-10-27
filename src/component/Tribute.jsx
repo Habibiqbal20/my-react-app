@@ -1,15 +1,15 @@
 import React from 'react'
-import batGirl from '../assets/my_cats/PXL_20230326_212705857.jpg'
-import apin from '../assets/my_cats/PXL_20240504_211643566.jpg'
-import kunis from '../assets/my_cats/PXL_20240327_144614073.jpg'
-import Oyen from '../assets/my_cats/_MG_6580.JPG'
-import Kocan from '../assets/my_cats/PXL_20241005_121424569.jpg'
-import Tondi from '../assets/my_cats/_MG_6573.JPG'
-import Cimeng from '../assets/my_cats/4 Sep 20_59.lmc_8.4.jpg'
-import Cimung from '../assets/my_cats/4 Sep 20_59.lmc_8.4.jpg'
+import batGirl from '../assets/my_cats_min/PXL_20230326_212705857.jpg'
+import apin from '../assets/my_cats_min/PXL_20240504_211643566.jpg'
+import kunis from '../assets/my_cats_min/PXL_20240327_144614073.jpg'
+import Oyen from '../assets/my_cats_min/PXL_20241206_130435371.jpg'
+import Kocan from '../assets/my_cats_min/PXL_20240728_171408689.jpg'
+import Tondi from '../assets/my_cats_min/_MG_6573.jpg'
+import Cimeng from '../assets/my_cats_min/4 Sep 20_59.lmc_8.4.jpg'
+import Cimung from '../assets/my_cats_min/20250720_170647_lmc_8.4.MP.jpg'
 
 export default function Tribute() {
-    const cat = [
+    const cats = [
         {
             nama: 'Bat Girl',
             lahir: 'N/A',
@@ -58,7 +58,7 @@ export default function Tribute() {
                     <h4>Tribute</h4>
                 </div>
                 <div className="content-tribute">
-                    {cat.map((myCat, i) => (
+                    {cats.map((myCat, i) => (
                         <div className="card-tribute" key={i}>
                             <img src={myCat.foto} alt="" />
                             <div className="information">
