@@ -1,4 +1,3 @@
-import '../assets/main.css';
 import gsap from '../assets/gsapSetup';
 import fotoProjectOne from '../assets/project/Screenshot (515).png';
 import fotoProjectTwo from '../assets/project/Screenshot (516).png';

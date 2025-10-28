@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from '../assets/gsapSetup';
 import SMA from '../assets/SMA.JPG';
-import '../assets/main.css';
 
 export default function Education() {
 

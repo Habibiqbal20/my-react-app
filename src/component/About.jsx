@@ -5,8 +5,6 @@ import { gsap } from "gsap";
 import { SplitText } from "gsap/all";
 //import GitHubCalendar from 'react-github-calendar';
 
-import '../assets/main.css';
-
 export default function About() {
     useEffect(() => {
         const link = document.createElement("link");

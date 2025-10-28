@@ -13,41 +13,49 @@ export default function Tribute() {
         {
             nama: 'Bat Girl',
             lahir: 'N/A',
+            status : 'Missing🤍',
             foto: batGirl
         },
         {
             nama: 'Apin',
-            lahir: 'N/A',
+            lahir: '21 April 2023',
+            status : 'Missing🤍',
             foto: apin
         },
         {
             nama: 'Kunis',
-            lahir: 'N/A',
+            lahir: '21 April 2023',
+            status : 'Missing🤍',
             foto: kunis
         },
         {
             nama: 'Kocan',
-            lahir: 'N/A',
+            lahir: '06 May 2024',
+            status : '🥀🤍',
             foto: Kocan
         },
         {
             nama: 'Oyen',
-            lahir: 'N/A',
+            lahir: '06 May 2024',
+            status : 'Missing🤍',
             foto: Oyen
         },
         {
             nama: 'Tondi',
             lahir: 'N/A',
+            status : '🥀🤍',
             foto: Tondi
         },
         {
             nama: 'Cimeng',
-            lahir: 'N/A',
+            lahir: '29 April 2025',
+            status : '🥀🤍',
             foto: Cimeng
         },
         {
             nama: 'Cimung',
-            lahir: 'N/A',
+            lahir: '29 April 2025',
+            status : '🥀🤍',
             foto: Cimung
         },
     ]
@@ -64,6 +72,7 @@ export default function Tribute() {
                             <div className="information">
                                 <h3>{myCat.nama}</h3>
                                 <p>{myCat.lahir}</p>
+                                <p>{myCat.status}</p>
                             </div>
                         </div>
                     ))}

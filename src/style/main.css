@@ -15,6 +15,16 @@ html {
   transition: background 0.1s ease;
 }
 
+.scroll-progress {
+  position: fixed;
+  top: 58px;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(to right, #00e0ff, #0072ff);
+  z-index: 99;
+  transition: width 0.1s linear;
+}
+
 .nav {
   padding: 15px 0 15px 0;
   background-color: #1e1e2f;
@@ -697,7 +707,6 @@ html {
 }
 .about .skills-section .skills-title {
   font-size: 2rem;
-  color: #FF4081;
   margin-bottom: 40px;
   color: #00e0ff;
 }
@@ -729,7 +738,7 @@ html {
 }
 .about .skills-section .skills-container .skill .skill-bar .skill-fill {
   height: 100%;
-  background: linear-gradient(90deg, #00e5ff, rgb(25.5, 231.6, 255));
+  background: linear-gradient(90deg, #00e0ff, rgb(25.5, 227.1, 255));
   box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
   border-radius: 10px 0 0 10px;
   transition: width 0.3s ease-out;
@@ -960,7 +969,7 @@ html {
 .powered {
   margin-top: 100px;
   padding: 0 40px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 @media (min-width: 1300px) {
   .powered {
@@ -979,16 +988,16 @@ html {
   color: #00e0ff;
 }
 .powered .inner-powered .content-powered {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 .powered .inner-powered .content-powered .card-lang {
   width: 210px;
   height: 130px;
   align-content: center;
   justify-self: center;
-  margin-bottom: 50px;
   padding: 10px 60px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.2);
@@ -1008,6 +1017,7 @@ html {
   align-items: center;
   margin-top: 100px;
   padding: 0 40px;
+  margin-bottom: 60px;
 }
 .container-tribute .inner-container {
   max-width: 1200px;
@@ -1022,12 +1032,14 @@ html {
   color: #00e0ff;
 }
 .container-tribute .inner-container .content-tribute {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5em;
   justify-content: center;
 }
 .container-tribute .inner-container .content-tribute .card-tribute {
+  width: 200px;
+  height: 200px;
   position: relative;
   overflow: hidden;
   border-radius: 12px;

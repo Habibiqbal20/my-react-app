@@ -11,7 +11,6 @@ import nationalFlag from '../assets/logo/Flag_of_Indonesia.png'
 import cardPhoto from '../assets/my_foto/WhatsApp_Image_2025-09-24_at_09.34.23-removebg-previews.png'
 import gsap from '../assets/gsapSetup';
 import VanillaTilt from "vanilla-tilt";
-import '../assets/main.css'
 
 export default function LandingPage() {
     const styleOne = { '--color': '#00e0ff' };

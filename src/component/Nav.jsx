@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import React, { useEffect, useRef, useLayoutEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from '../assets/gsapSetup';
-import '../assets/main.css'
 
 
 export default function Nav() {
@@ -50,6 +49,12 @@ export default function Nav() {
     useEffect(() => {
         const nav = gsap.context(() => {
             gsap.from(".nav", {
+                y: -100,
+                opacity: 0,
+                duration: 1
+            });
+
+            gsap.from(".scroll-progress", {
                 y: -100,
                 opacity: 0,
                 duration: 1
@@ -108,33 +113,48 @@ export default function Nav() {
         });
         return () => nav.revert();
     }, []);
+    
+
+    const [scrollWidth, setScrollWidth] = useState(0);
+    useEffect(() => {
+        const progressBar = () => {
+            const scrollY = window.scrollY;
+            const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (scrollY / docHeight) * 100;
+            setScrollWidth(scrolled);
+        }
+        window.addEventListener('scroll', progressBar);
+        return () => window.addEventListener('scroll', progressBar);
+    }, []);
 
     return (
-        <div className='nav'>
-            <div className="main">
-                <div className="logo">
-                    <h1>
-                        <a href="">Habib Iqbal.</a>
-                    </h1>
-                </div>
-                <div className={listOpen} ref={listRef}>
-                    <ul className={isMobile ? 'mobile' : ''}>
-                        {listItem.map((item) => (
-                            <li
-                                key={item}
-                                className={active === item ? 'active li' : 'li'}
-                                onClick={() => setActive((item))}
-                            >
-                                <a onClick={() => (window.location.href = '#' + item.toLowerCase())}>{item}</a>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div className={menuBtn} onClick={toggleClassMenuBtn} ref={menuRef}>
-                    <div className="menu-btn__burger"></div>
+        <>
+            <div className='nav'>
+                <div className="main">
+                    <div className="logo">
+                        <h1>
+                            <a href="">Habib Iqbal.</a>
+                        </h1>
+                    </div>
+                    <div className={listOpen} ref={listRef}>
+                        <ul className={isMobile ? 'mobile' : ''}>
+                            {listItem.map((item) => (
+                                <li
+                                    key={item}
+                                    className={active === item ? 'active li' : 'li'}
+                                    onClick={() => setActive((item))}
+                                >
+                                    <a onClick={() => (window.location.href = '#' + item.toLowerCase())}>{item}</a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className={menuBtn} onClick={toggleClassMenuBtn} ref={menuRef}>
+                        <div className="menu-btn__burger"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-
+            <div className="scroll-progress" style={{ width: `${scrollWidth}%` }} ></div>
+        </>
     )
 }
