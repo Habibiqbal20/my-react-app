@@ -4,7 +4,7 @@ import apin from '../assets/my_cats_min/PXL_20240504_211643566.jpg'
 import kunis from '../assets/my_cats_min/PXL_20240327_144614073.jpg'
 import Oyen from '../assets/my_cats_min/PXL_20241206_130435371.jpg'
 import Kocan from '../assets/my_cats_min/PXL_20240728_171408689.jpg'
-import Tondi from '../assets/my_cats_min/_MG_6573.jpg'
+import Tondi from '../assets/my_cats_min/MG6573.jpg'
 import Cimeng from '../assets/my_cats_min/4 Sep 20_59.lmc_8.4.jpg'
 import Cimung from '../assets/my_cats_min/20250720_170647_lmc_8.4.MP.jpg'
 
