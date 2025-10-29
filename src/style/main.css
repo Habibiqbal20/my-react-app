@@ -10,8 +10,23 @@
 html {
   margin: 0;
   height: 100vh;
-  background: #000000;
   transition: background 0.1s ease;
+}
+
+body.dark {
+  background: #000000;
+  transition: ease 1s;
+}
+
+body.light {
+  background: #ffffff;
+  transition: ease 1s;
+}
+body.light .hero .container .hero-content h1 {
+  color: black;
+}
+body.light .hero .container .hero-content h2 {
+  color: black;
 }
 
 .scroll-progress {

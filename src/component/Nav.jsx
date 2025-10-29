@@ -4,6 +4,7 @@ import gsap from '../animations/gsapSetup';
 
 
 export default function Nav() {
+    // Navbar dan SideBar
     const listItem = ['Home', 'About', 'Project', 'Contact'];
     const [active, setActive] = useState('Home');
     const [menuBtn, setMenuBtn] = useState('menu-btn');
@@ -46,6 +47,33 @@ export default function Nav() {
         return () => mediaQuery.removeEventListener('change', handleChange);
     });
 
+
+    // Progress Bar
+    const [scrollWidth, setScrollWidth] = useState(0);
+    useEffect(() => {
+        const progressBar = () => {
+            const scrollY = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (scrollY / docHeight) * 100;
+            setScrollWidth(scrolled);
+        }
+        window.addEventListener('scroll', progressBar);
+        return () => window.addEventListener('scroll', progressBar);
+    }, []);
+
+
+    // Light dan Dark Mode
+    const [theme, setTheme] = useState(() => {
+        return localStorage.getItem('theme') || 'dark';
+    })
+    useEffect(() => {
+        document.body.className = theme;
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+
+
+
+    // Gsap
     useEffect(() => {
         const nav = gsap.context(() => {
             gsap.from(".nav", {
@@ -112,19 +140,6 @@ export default function Nav() {
             }, 500);
         });
         return () => nav.revert();
-    }, []);
-    
-
-    const [scrollWidth, setScrollWidth] = useState(0);
-    useEffect(() => {
-        const progressBar = () => {
-            const scrollY = window.scrollY;
-            const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
-            const scrolled = (scrollY / docHeight) * 100;
-            setScrollWidth(scrolled);
-        }
-        window.addEventListener('scroll', progressBar);
-        return () => window.addEventListener('scroll', progressBar);
     }, []);
 
     return (

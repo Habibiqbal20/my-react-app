@@ -15,10 +15,12 @@ $bg-white: #fff;
 $contact-shadow: rgba(0, 0, 0, 0.15);
 $contact-shadow-hover: rgba(0, 224, 255, 0.4);
 $footer-bg: #1f1f1f;
-// $footer-bg: #1e1e2f;
 $skill-accent-glow: rgba(0, 229, 255, 0.6);
 $skill-bar-bg: rgba(255, 255, 255, 0.08);
 $skill-bar-glow: rgba(0, 255, 255, 0.2);
+
+// LIGHT MODE
+$bg-color-light: #ffffff;
 
 
 /* ===== RESET ===== */
@@ -32,8 +34,28 @@ $skill-bar-glow: rgba(0, 255, 255, 0.2);
 html {
     margin: 0;
     height: 100vh;
-    background: $bg-color;
     transition: background 0.1s ease;
+}
+
+body.dark {
+    background: $bg-color;
+    transition: ease 1s;
+}
+body.light {
+    background: $bg-color-light;
+    transition: ease 1s;
+    .hero {
+        .container {
+            .hero-content {
+                h1 {
+                    color: black;
+                }
+                h2 {
+                    color: black;
+                }
+            }
+        }
+    }
 }
 
 .scroll-progress {
