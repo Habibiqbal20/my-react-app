@@ -9,7 +9,7 @@ library.add(fas, far, fab)
 import logoCard from '../assets/logo/Manchester_City_FC_badge.svg'
 import nationalFlag from '../assets/logo/Flag_of_Indonesia.png'
 import cardPhoto from '../assets/my_foto/WhatsApp_Image_2025-09-24_at_09.34.23-removebg-previews.png'
-import gsap from '../assets/gsapSetup';
+import gsap from '../animations/gsapSetup';
 import VanillaTilt from "vanilla-tilt";
 
 export default function LandingPage() {
@@ -38,7 +38,6 @@ export default function LandingPage() {
                 : index = Math.min(current.length, index + 1);
 
             el.current && (el.current.textContent = current.substring(0, index));
-
             let delay = isDeleting ? 80 : 120;
 
             if (!isDeleting && index === current.length) {

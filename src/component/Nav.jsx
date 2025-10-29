@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import React, { useEffect, useRef } from 'react';
-import gsap from '../assets/gsapSetup';
+import gsap from '../animations/gsapSetup';
 
 
 export default function Nav() {

@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-import gsap from '../assets/gsapSetup';
-import SMA from '../assets/SMA.JPG';
+import gsap from '../animations/gsapSetup';
+import SMA from '../assets/school/SMA.JPG';
 
 export default function Education() {
 
     const timeline = [
         {
             title: 'STIE BINA KARYA',
-            listItem: ['Address : Tebing Tinggi', 'Year : 2021 - 2025', 'Average Value : 3.7'],
+            listItem: ['Address : Tebing Tinggi', 'Year : 2021 - 2025', 'Average Value : 3.71'],
             link: 'https://maps.app.goo.gl/UEHebYC8fWGBJacs8',
             img: SMA
         },
@@ -41,28 +41,27 @@ export default function Education() {
                 {
                     x: 0,
                     opacity: 1,
-                    //ease: "expo.out",
-                    //duration: 0.5,
+                    ease: "power4.out",
+                    duration: 2,
                     scrollTrigger: {
                         trigger: myEdu,
-                        start: "top 75%",
-                        //scrub: true,
-                        //markers: true,
+                        start: "top 90%",
+                        once: true,
                     }
                 }
             );
             myEdu.addEventListener("mouseenter", () => {
                 gsap.to(myEdu, {
                     y: -10,
-                    duration: 0.2,
-                    ease: "power2.out"
+                    duration: 1,
+                    ease: "power4"
                 });
             });
             myEdu.addEventListener("mouseleave", () => {
                 gsap.to(myEdu, {
                     y: 1,
-                    duration: 0.2,
-                    ease: "power2.out"
+                    duration: 1,
+                    ease: 'power4'
                 });
             });
         });
@@ -74,7 +73,7 @@ export default function Education() {
         setActiveIndex((prev) => (
             prev === index ? null : index));
     };
-    
+
     return (
         <>
             <div className="timeline-heading">
@@ -91,7 +90,7 @@ export default function Education() {
                                 </a>
                                 {edu.listItem.map((item, j) => (
                                     <p key={j}>{item}</p>
-                                    
+
                                 ))}
                                 <img
                                     src={edu.img}

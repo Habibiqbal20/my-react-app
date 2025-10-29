@@ -23,7 +23,7 @@ gsap.registerPlugin(
   Observer,
   PixiPlugin,
   ScrambleTextPlugin,
-  ScrollTrigger, 
+  ScrollTrigger,
   ScrollSmoother,
   TextPlugin,
   RoughEase,

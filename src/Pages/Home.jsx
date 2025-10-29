@@ -13,7 +13,7 @@ import Tribute from '../component/Tribute'
 export default function Home() {
     return (
         <>
-            <MouseHover />
+            {/* <MouseHover /> */}
             <Nav />
             <LandingPage />
             <About />

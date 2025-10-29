@@ -1,4 +1,4 @@
-import gsap from '../assets/gsapSetup';
+import gsap from '../animations/gsapSetup';
 import fotoProjectOne from '../assets/project/Screenshot (515).png';
 import fotoProjectTwo from '../assets/project/Screenshot (516).png';
 import { useEffect } from 'react';
@@ -28,12 +28,12 @@ export default function Project() {
                 {
                     x: 0,
                     opacity: 1,
-                    ease: "none",
+                    ease: 'power4',
+                    duration: 2,
                     scrollTrigger: {
                         trigger: card,
                         start: "top 80%",
-                        end: "top 35%",
-                        scrub: true,
+                        //scrub: true,
                         //markers: true,
                     }
                 }
@@ -41,15 +41,15 @@ export default function Project() {
             card.addEventListener("mouseenter", () => {
                 gsap.to(card, {
                     y: -10,
-                    duration: 0.2,
-                    ease: "power2.out"
+                    duration: 1,
+                    ease: "power4"
                 });
             });
             card.addEventListener("mouseleave", () => {
                 gsap.to(card, {
                     y: 1,
-                    duration: 0.2,
-                    ease: "power2.inOut"
+                    duration: 1,
+                    ease: "power4"
                 });
             });
         });
