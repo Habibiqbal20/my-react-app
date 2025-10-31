@@ -21,6 +21,9 @@ $skill-bar-glow: rgba(0, 255, 255, 0.2);
 
 // LIGHT MODE
 $bg-color-light: #ffffff;
+$text-lightmode: #222;
+$text-muted-lightmode: #383838;
+$bg-color3-lightmode: rgb(240, 240, 240);
 
 
 /* ===== RESET ===== */
@@ -29,6 +32,7 @@ $bg-color-light: #ffffff;
     padding: 0;
     box-sizing: border-box;
     font-family: $font-main;
+    $bg-color3-lightmode: rgb(146, 146, 146);
 }
 
 html {
@@ -37,25 +41,93 @@ html {
     transition: background 0.1s ease;
 }
 
-body.dark {
-    background: $bg-color;
-    transition: ease 1s;
-}
 body.light {
     background: $bg-color-light;
-    transition: ease 1s;
+
     .hero {
         .container {
             .hero-content {
-                h1 {
-                    color: black;
+                h3 {
+                    color: $text-muted-lightmode;
                 }
+
+                h1 {
+                    color: $text-lightmode;
+                }
+
                 h2 {
-                    color: black;
+                    color: $text-lightmode;
+                }
+
+                p {
+                    color: $text-lightmode;
+                }
+
+                .social-icons {
+                    a {
+                        &:hover {
+                            color: $bg-color-light;
+                        }
+                    }
                 }
             }
         }
     }
+
+    .about {
+        .about-content {
+            .text {
+                color: $text-dark;
+            }
+        }
+
+        .github {
+            .content {
+                .github-profile {
+                    background-color: $bg-color3-lightmode;
+
+                    .information {
+                        color: $text-lightmode;
+                    }
+                }
+
+                .calendar {
+                    background-color: $bg-color3-lightmode;
+                    color: $text-muted-lightmode;
+                }
+            }
+        }
+    }
+
+    .skills {
+        .skills-content-container {
+            .skills-content {
+                .skills-card {
+                    background: $bg-color3-lightmode;
+
+                    .skills-name {
+                        color: $text-lightmode;
+                    }
+
+                    .information {
+                        ul {
+                            li {
+                                color: $text-muted-lightmode;
+
+                                &:hover {
+                                    color: $text-lightmode;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+body.dark {
+    background: $bg-color;
 }
 
 .scroll-progress {
@@ -646,7 +718,7 @@ body.light {
 
         .text {
             text-align: justify;
-            color: white;
+            color: $text-color;
 
             p {
                 font-weight: 100;
@@ -720,18 +792,18 @@ body.light {
                         width: 120px;
                     }
                 }
-            }
 
-            .information {
-                color: white;
+                .information {
+                    color: $text-color;
 
-                .location,
-                .full-name,
-                .birth-date {
-                    p {
-                        margin-bottom: 5px;
-                        font-size: 0.8rem;
-                        //white-space: nowrap;
+                    .location,
+                    .full-name,
+                    .birth-date {
+                        p {
+                            margin-bottom: 5px;
+                            font-size: 0.8rem;
+                            //white-space: nowrap;
+                        }
                     }
                 }
             }

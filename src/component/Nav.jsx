@@ -164,6 +164,11 @@ export default function Nav() {
                             ))}
                         </ul>
                     </div>
+                    <div className="theme">
+                        <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+                            Theme is {theme}
+                        </button>
+                    </div>
                     <div className={menuBtn} onClick={toggleClassMenuBtn} ref={menuRef}>
                         <div className="menu-btn__burger"></div>
                     </div>

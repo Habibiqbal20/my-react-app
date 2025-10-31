@@ -13,20 +13,52 @@ html {
   transition: background 0.1s ease;
 }
 
-body.dark {
-  background: #000000;
-  transition: ease 1s;
-}
-
 body.light {
   background: #ffffff;
-  transition: ease 1s;
+}
+body.light .hero .container .hero-content h3 {
+  color: #383838;
 }
 body.light .hero .container .hero-content h1 {
-  color: black;
+  color: #222;
 }
 body.light .hero .container .hero-content h2 {
-  color: black;
+  color: #222;
+}
+body.light .hero .container .hero-content p {
+  color: #222;
+}
+body.light .hero .container .hero-content .social-icons a:hover {
+  color: #ffffff;
+}
+body.light .about .about-content .text {
+  color: #222;
+}
+body.light .about .github .content .github-profile {
+  background-color: rgb(240, 240, 240);
+}
+body.light .about .github .content .github-profile .information {
+  color: #222;
+}
+body.light .about .github .content .calendar {
+  background-color: rgb(240, 240, 240);
+  color: #383838;
+}
+body.light .skills .skills-content-container .skills-content .skills-card {
+  background: rgb(240, 240, 240);
+}
+body.light .skills .skills-content-container .skills-content .skills-card .skills-name {
+  color: #222;
+}
+body.light .skills .skills-content-container .skills-content .skills-card .information ul li {
+  color: #383838;
+}
+body.light .skills .skills-content-container .skills-content .skills-card .information ul li:hover {
+  color: #222;
+}
+
+body.dark {
+  background: #000000;
 }
 
 .scroll-progress {
@@ -511,7 +543,7 @@ body.light .hero .container .hero-content h2 {
 }
 .about .about-content .text {
   text-align: justify;
-  color: white;
+  color: #fff;
 }
 .about .about-content .text p {
   font-weight: 100;
@@ -571,12 +603,12 @@ body.light .hero .container .hero-content h2 {
 .about .github .content .github-profile .photo img {
   width: 120px;
 }
-.about .github .content .information {
-  color: white;
+.about .github .content .github-profile .information {
+  color: #fff;
 }
-.about .github .content .information .location p,
-.about .github .content .information .full-name p,
-.about .github .content .information .birth-date p {
+.about .github .content .github-profile .information .location p,
+.about .github .content .github-profile .information .full-name p,
+.about .github .content .github-profile .information .birth-date p {
   margin-bottom: 5px;
   font-size: 0.8rem;
 }
