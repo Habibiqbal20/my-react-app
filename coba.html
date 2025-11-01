@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toggle Switch Only CSS</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f3f4f6;
+        }
+
+        /* --- toggle container --- */
+        .toggle {
+            position: relative;
+            width: 60px;
+            height: 34px;
+        }
+
+        /* sembunyikan checkbox asli */
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* --- slider background --- */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+
+        /* --- knob bulat --- */
+        .slider::before {
+            content: "";
+            position: absolute;
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        /* saat dicentang, ubah warna dan geser knob ke kanan */
+        input:checked+.slider {
+            background-color: #4ade80;
+            /* hijau lembut */
+        }
+
+        input:checked+.slider::before {
+            transform: translateX(26px);
+        }
+
+        /* efek bayangan opsional */
+        .slider::before {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <label class="toggle">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+
+</body>
+
+</html>

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ===== VARIABLES ===== */
 /* ===== RESET ===== */
 * {
@@ -56,6 +57,45 @@ body.light .skills .skills-content-container .skills-content .skills-card .infor
 body.light .skills .skills-content-container .skills-content .skills-card .information ul li:hover {
   color: #222;
 }
+body.light .skills-section .skills-container .skill .skill-info .skill-name {
+  color: rgb(59.5, 59.5, 59.5);
+}
+body.light .skills-section .skills-container .skill .skill-bar {
+  background: rgba(185, 185, 185, 0.459);
+}
+body.light .timeline .timeline-item .timeline-content {
+  background: rgb(240, 240, 240);
+  border: rgba(160, 160, 160, 0.5) 1px solid;
+}
+body.light .timeline .timeline-item .timeline-content a {
+  color: #222;
+}
+body.light .timeline .timeline-item .timeline-content p {
+  color: #383838;
+}
+body.light .projects .grid .card {
+  background: rgb(240, 240, 240);
+  border: rgba(160, 160, 160, 0.5) 1px solid;
+}
+body.light .projects .grid .card .card-content h3 {
+  color: #222;
+}
+body.light .projects .grid .card .card-content p {
+  color: #383838;
+}
+body.light .powered .inner-powered .content-powered .card-lang {
+  background-color: rgba(65, 65, 65, 0.459);
+}
+body.light .contact .container .contact-form .form-group input,
+body.light .contact .container .contact-form .form-group textarea {
+  background: rgb(240, 240, 240);
+}
+body.light .contact .container .contact-form .btn {
+  color: #fff;
+}
+body.light .contact .container .download-cv .download-btn:hover {
+  color: #fff;
+}
 
 body.dark {
   background: #000000;
@@ -75,7 +115,7 @@ body.dark {
   padding: 15px 0 15px 0;
   background-color: rgba(0, 0, 0, 0.6039215686);
   backdrop-filter: blur(10px);
-  border-bottom: #505050 1px solid;
+  border-bottom: rgba(255, 255, 255, 0.377) 1px solid;
   position: fixed;
   width: 100%;
   z-index: 100;
@@ -112,6 +152,7 @@ body.dark {
 .nav .main .list {
   width: 40%;
   font-family: "Poppins", sans-serif;
+  z-index: 1000;
 }
 .nav .main .list ul {
   display: flex;
@@ -141,6 +182,57 @@ body.dark {
 }
 .nav .main .list ul li a:hover {
   color: #757575;
+}
+.nav .main .toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav .main .theme {
+  position: relative;
+  width: 52px;
+  height: 25px;
+  z-index: 900;
+}
+.nav .main .theme .slider.dark {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.nav .main .theme .slider.dark.dark::before {
+  content: "🌕";
+  position: absolute;
+  left: 1px;
+  bottom: 1px;
+  transition: 0.4s;
+  border-radius: 50%;
+  font-size: 18px;
+}
+.nav .main .theme .slider.light {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.nav .main .theme .slider.light.light::before {
+  content: "☀️";
+  position: absolute;
+  left: 26px;
+  bottom: 1px;
+  transition: 0.4s;
+  border-radius: 50%;
+  font-size: 18px;
 }
 .nav .main .menu-btn {
   display: none;
@@ -848,7 +940,7 @@ body.dark {
   border: rgba(255, 255, 255, 0.377) 1px solid;
 }
 .timeline .timeline-item .timeline-content a {
-  color: rgb(255, 255, 255);
+  color: #fff;
   text-decoration: none;
 }
 .timeline .timeline-item .timeline-content a:hover {
@@ -1174,13 +1266,13 @@ body.dark {
   max-width: 800px;
   margin: 0 auto;
 }
-.contact .contact-form {
+.contact .container .contact-form {
   display: grid;
   gap: 20px;
   margin-bottom: 30px;
 }
-.contact .contact-form .form-group input,
-.contact .contact-form .form-group textarea {
+.contact .container .contact-form .form-group input,
+.contact .container .contact-form .form-group textarea {
   width: 100%;
   padding: 12px 15px;
   border-radius: 8px;
@@ -1190,14 +1282,14 @@ body.dark {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
   transition: box-shadow 0.3s ease;
 }
-.contact .contact-form .form-group input:focus,
-.contact .contact-form .form-group textarea:focus {
+.contact .container .contact-form .form-group input:focus,
+.contact .container .contact-form .form-group textarea:focus {
   box-shadow: 0 3px 12px rgba(0, 224, 255, 0.4);
 }
-.contact .contact-form .hilang {
+.contact .container .contact-form .hilang {
   display: none !important;
 }
-.contact .contact-form .btn {
+.contact .container .contact-form .btn {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -1213,11 +1305,11 @@ body.dark {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
-.contact .contact-form .btn:hover {
+.contact .container .contact-form .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 224, 255, 0.4);
 }
-.contact .contact-form .btn .spinner {
+.contact .container .contact-form .btn .spinner {
   width: 18px;
   height: 18px;
   border: 3px solid rgba(255, 255, 255, 0.4);
@@ -1226,10 +1318,10 @@ body.dark {
   animation: spin 1s linear infinite;
   margin-left: 10px;
 }
-.contact .contact-form .btn.loading {
+.contact .container .contact-form .btn.loading {
   cursor: not-allowed;
 }
-.contact .contact-form .btn.loading .btn-text {
+.contact .container .contact-form .btn.loading .btn-text {
   opacity: 0.9;
 }
 @keyframes spin {
@@ -1240,7 +1332,7 @@ body.dark {
     transform: rotate(360deg);
   }
 }
-.contact .download-cv .download-btn {
+.contact .container .download-cv .download-btn {
   background: transparent;
   border: 2px solid #00e0ff;
   color: #00e0ff;
@@ -1250,7 +1342,7 @@ body.dark {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.contact .download-cv .download-btn:hover {
+.contact .container .download-cv .download-btn:hover {
   background: #00e0ff;
   color: #000000;
   transform: translateY(-3px);

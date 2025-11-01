@@ -19,13 +19,16 @@ export default function Nav() {
     };
     const menuRef = useRef(null);
     const listRef = useRef(null);
+    const toggle = useRef(null);
     useEffect(() => {
         function handleClickOutside(e) {
             if (
                 menuRef.current &&
                 listRef.current &&
+                toggle.current &&
                 !menuRef.current.contains(e.target) &&
-                !listRef.current.contains(e.target)
+                !listRef.current.contains(e.target) &&
+                !toggle.current.contains(e.target)
             ) {
                 setMenuBtn("menu-btn");
                 setListOpen("list");
@@ -60,18 +63,6 @@ export default function Nav() {
         window.addEventListener('scroll', progressBar);
         return () => window.addEventListener('scroll', progressBar);
     }, []);
-
-
-    // Light dan Dark Mode
-    const [theme, setTheme] = useState(() => {
-        return localStorage.getItem('theme') || 'dark';
-    })
-    useEffect(() => {
-        document.body.className = theme;
-        localStorage.setItem('theme', theme);
-    }, [theme]);
-
-
 
     // Gsap
     useEffect(() => {
@@ -142,6 +133,22 @@ export default function Nav() {
         return () => nav.revert();
     }, []);
 
+
+
+    const [slider, setSlider] = useState(() => {
+        return localStorage.getItem('slider') || 'slider dark';
+    });
+    const [theme, setTheme] = useState(() => {
+        return localStorage.getItem('theme') || 'dark';
+    })
+    document.body.className = theme;
+    localStorage.setItem('slider', slider)
+    localStorage.setItem('theme', theme);
+    function sliderToggle() {
+        setSlider(slider === 'slider dark' ? 'slider light' : 'slider dark')
+        setTheme(theme === 'dark' ? 'light' : 'dark')
+    }
+
     return (
         <>
             <div className='nav'>
@@ -164,13 +171,13 @@ export default function Nav() {
                             ))}
                         </ul>
                     </div>
-                    <div className="theme">
-                        <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-                            Theme is {theme}
-                        </button>
-                    </div>
-                    <div className={menuBtn} onClick={toggleClassMenuBtn} ref={menuRef}>
-                        <div className="menu-btn__burger"></div>
+                    <div className="toggle" ref={toggle}>
+                        <div className="theme">
+                            <span className={slider} onClick={sliderToggle}></span>
+                        </div>
+                        <div className={menuBtn} onClick={toggleClassMenuBtn} ref={menuRef}>
+                            <div className="menu-btn__burger"></div>
+                        </div>
                     </div>
                 </div>
             </div>
